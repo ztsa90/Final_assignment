@@ -21,10 +21,11 @@ def main():
         # Get and validate input parameters
         path = sys.argv[1]
         output_choice = sys.argv[2].strip().lower()
-        file_path = sys.argv[3]
-        desired_gene_name = [name.strip() for name in sys.argv[4].split(',')]
-        threshold = float(sys.argv[5])
-        number = int(sys.argv[6])
+        desired_gene_name = [name.strip() for name in sys.argv[3].split(',')]
+        threshold = float(sys.argv[4])
+        number = int(sys.argv[5])
+        if output_choice == 'file_path':
+           file_path = sys.argv[6]
 
         # Validate input parameters and raise InputError if any issues are found
         if not desired_gene_name:

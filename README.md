@@ -98,30 +98,41 @@ Custom exception handling for Input-related errors.
 ### Executing program
 Command Line Format
 The program is executed through the command line using the following format:
-bashCopypython final_main.py [path] [output_choice] [file_path] [desired_gene_name] [threshold] [number]
+We have two ways to define an input argument
+If the output_choice is set to "screen," there is no need for file_path since we are not writing to a file. Therefore, the argument list should be as follows:
+bashCopypython final_main.py [path] [output_choice] [desired_gene_name] [threshold] [number]
+
+If we want to write to a file, we need to specify the file_path. In this case, our input argument:
+bashCopypython final_main.py [path] [output_choice] [desired_gene_name] [threshold] [number][file_path]
+
 # Parameter Details
 1. The path to your input data CSV file. Must be a valid CSV file with the correct format
    Example: data/liver_expression.csv
 2. Output_choice. Specifies where to send the analysis results. Two valid options:
    screen: Display results in the terminal
    file_path: Save results to a file
-3. File_path. The destination path for the output file
-   Required even if output_choice is 'screen' (can be a placeholder in that case)
-   Example: results/analysis_output.txt
-4. Desired_gene_name. Can be one or some gene_names.Comma-separated list of gene names to analyze
+3. Desired_gene_name. Can be one or some gene_names.Comma-separated list of gene names to analyze
    No spaces between genes. Case-sensitive
    Example: "GENE1,GENE2,GENE3"
-5. Threshold. numerical value for expression threshold analysis
+4. Threshold. numerical value for expression threshold analysis
    Must be non-negative. Can be integer or float, Example: 5.0
-6. Number. Integer specifying how many top differential genes to analyze. Must be positive. Example: 10
+5. Number. Integer specifying how many top differential genes to analyze. Must be positive. Example: 10
+6. File_path. The destination path for the output file
+   Required even if output_choice is 'screen' (can be a placeholder in that case)
+   Example: results/analysis_output.txt
 
 Basic analysis with screen output:
 Command Line Format
 The program is executed through the command line using the following format:
-bashCopypython final_main.py [path] [output_choice] [file_path] [desired_gene_name] [threshold] [number]
 
-[/users/data/liver_cancer_gene_expression] [screen] [/user/data/outpu.txt] ["117_at, 1255_g_at, 1294_at"] [14] [4]
-
+1. If the output_choise is : screen.
+```bash
+[/users/data/liver_cancer_gene_expression] [screen] ["117_at, 1255_g_at, 1294_at"] [14] [4]
+```
+2. If the output_choise is : file_path
+```bash
+[/users/data/liver_cancer_gene_expression] [file_path] ["117_at, 1255_g_at, 1294_at"] [14] [4] [/users/data/output.txt]
+```
 All arguments should be updated.
 
 ## Help
