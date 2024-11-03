@@ -60,8 +60,8 @@ Basic Statistics:
 - Variation Measures:Standard deviation calculation, Variance computation
 - Advanced Analytics: Differential Expression: Ratio calculations between HCC and normal samples
 Fold change analysis. Expression pattern comparison
-- Threshold Analysis: Identifies genes above specified expression levels. Filters significant expression changes. Highlights      potential biomarkers
-- Sample Analysis: Minimum/maximum expression detection. Sample-specific patterns. Expression range identification
+- Threshold Analysis: Identifies genes above specified expression levels. Filters significant expression changes. 
+- Sample Analysis: Minimum/maximum expression detection for each Sample ID.
 
 ### 4. report_class.py (AnalysisReport)
 Creates formatted, readable outputs of analysis results. Output Options:
@@ -117,9 +117,7 @@ bashCopypython final_main.py [path] [output_choice] [desired_gene_name] [thresho
 4. Threshold. numerical value for expression threshold analysis
    Must be non-negative. Can be integer or float, Example: 5.0
 5. Number. Integer specifying how many top differential genes to analyze. Must be positive. Example: 10
-6. File_path. The destination path for the output file
-   Required even if output_choice is 'screen' (can be a placeholder in that case)
-   Example: results/analysis_output.txt
+6. File_path. The destination path for the output file Required even 
 
 Basic analysis with screen output:
 Command Line Format
